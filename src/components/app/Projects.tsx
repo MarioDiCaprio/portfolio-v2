@@ -28,23 +28,25 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = (props) => {
     return (
-        <article className="p-4 rounded-xl bg-white/10 border border-white/10 cursor-pointer select-none">
-            <div className="w-full h-[300px] mb-4 rounded-xl bg-white-500">
+        <article className="p-[1.5px] rounded-xl border-gradient cursor-pointer select-none">
+            <div className="p-4 rounded-xl bg-white/10 border border-white/10">
+                <div className="w-full h-[300px] mb-4 rounded-xl bg-white-500">
 
-            </div>
-            <h3 className="text-2xl font-bold">
-                {props.title}
-            </h3>
-            <h4 className="text-lg font-bold text-white-300">
-                {props.subtitle}
-            </h4>
-            <hr className="my-5 opacity-10"/>
-            <div className="flex gap-3 text-xl">
-                {props.technologies?.map(t =>
-                    <span key={t}>
+                </div>
+                <h3 className="text-2xl font-bold">
+                    {props.title}
+                </h3>
+                <h4 className="text-lg font-bold text-white-300">
+                    {props.subtitle}
+                </h4>
+                <hr className="my-5 opacity-10"/>
+                <div className="flex gap-3 text-xl">
+                    {props.technologies?.map(t =>
+                            <span key={t}>
                        {technologyIcons[t]}
                     </span>
-                )}
+                    )}
+                </div>
             </div>
         </article>
     );
