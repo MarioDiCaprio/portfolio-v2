@@ -1,6 +1,7 @@
 import Image from "next/image";
 import LandingPage from "@/components/app/LandingPage";
 import Projects from "@/components/app/Projects";
+import TechStack from "@/components/app/TechStack";
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         <>
             <LandingPage />
             <Projects />
+            <TechStack />
         </>
     );
 }
