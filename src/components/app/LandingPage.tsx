@@ -1,8 +1,10 @@
 import React from "react";
+import { FaArrowDown as ArrowDownIcon } from "react-icons/fa";
+
 
 const LandingPage: React.FC = () => {
     return (
-        <section className="w-full pt-28 flex flex-col items-center">
+        <section className="relative w-full pt-40 flex flex-col items-center">
             <h1 className="
                     mb-4 text-6xl font-bold text-transparent bg-clip-text
                     bg-gradient-to-b from-white to-white-300">
@@ -16,12 +18,9 @@ const LandingPage: React.FC = () => {
             <p className="w-full max-w-[400px] text-center">
                 I am a Software Engineer specializing in frontend development. Based in Ulm, Germany.
             </p>
-            <button className="
-                    mt-12 px-8 py-3 rounded-full font-medium cursor-pointer
-                    bg-transparent hover:bg-white text-white hover:text-black
-                    border-2 border-white hover:border-transparent duration-300">
-                Hello World
-            </button>
+            <div className="w-full h-full mt-20 flex justify-center items-center text-4xl">
+                <ArrowDownIcon className="animate-bounce" />
+            </div>
         </section>
     );
 }

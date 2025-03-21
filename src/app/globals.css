@@ -52,6 +52,14 @@
     -webkit-background-clip: text;
 }
 
+.link {
+    color: var(--color-white-200);
+    transition: 300ms;
+    &:hover {
+        color: var(--color-white);
+    }
+}
+
 .border-gradient {
     position: relative;
 }
@@ -77,12 +85,13 @@
     mask: linear-gradient(#fff, #fff) padding-box, linear-gradient(#fff, #fff);
     mask-composite: exclude;
     z-index: -1;
-    display: none;
+    opacity: 0;
+    transition: opacity 300ms ease;
     animation: 5s rotate linear infinite;
 }
 
 .border-gradient:hover::after {
-    display: block;
+    opacity: 1;
 }
 
 @keyframes rotate {
