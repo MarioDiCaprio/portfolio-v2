@@ -11,15 +11,15 @@ const Navbar: React.FC = () => (
         </a>
         <div className="flex gap-12">
             <a href="https://www.linkedin.com/in/mario-di-caprio-a0897b243/" target="_blank" className="flex gap-2 items-center link">
-                <LinkedInIcon />
+                <LinkedInIcon aria-hidden />
                 <span>LinkedIn</span>
             </a>
             <a href="https://github.com/MarioDiCaprio/" target="_blank" className="flex gap-2 items-center link">
-                <GitHubIcon />
+                <GitHubIcon aria-hidden />
                 <span>GitHub</span>
             </a>
             <a href="https://.../" target="_blank" className="flex gap-2 items-center link">
-                <ResumeIcon />
+                <ResumeIcon aria-hidden />
                 <span>Resumé</span>
             </a>
         </div>

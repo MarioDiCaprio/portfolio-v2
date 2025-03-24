@@ -12,11 +12,11 @@ import {motion, useScroll, useTransform} from "framer-motion";
 type Technology = 'git' | 'typescript' | 'react' | 'next' | 'vue';
 
 const technologyIcons: Record<Technology, React.JSX.Element> = {
-    'git': <GitIcon />,
-    'typescript': <TypeScriptIcon />,
-    'react': <ReactIcon />,
-    'next': <NextIcon />,
-    'vue': <VueIcon />
+    'git': <GitIcon aria-label="Git" />,
+    'typescript': <TypeScriptIcon aria-label="TypeScript" />,
+    'react': <ReactIcon aria-label="React JS" />,
+    'next': <NextIcon aria-label="Next JS" />,
+    'vue': <VueIcon aria-label="Vue JS" />
 };
 
 interface ProjectProps {

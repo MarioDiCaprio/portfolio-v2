@@ -17,7 +17,9 @@ interface TechnologyProps {
 const Technology: React.FC<TechnologyProps> = (props) => {
     return (
         <article className={`py-5 flex items-center gap-5 text-5xl text-white font-bold duration-300 ${props.className}`}>
-            {props.icon}
+            <span aria-hidden>
+                {props.icon}
+            </span>
             <span>
                 {props.title}
             </span>
