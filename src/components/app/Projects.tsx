@@ -1,9 +1,12 @@
-import React from "react";
+"use client"
+
+import React, {useRef, useState} from "react";
 import { FaGitAlt as GitIcon } from "react-icons/fa6";
 import { BiLogoTypescript as TypeScriptIcon } from "react-icons/bi";
 import { FaReact as ReactIcon } from "react-icons/fa";
 import { SiNextdotjs as NextIcon } from "react-icons/si";
 import { FaVuejs as VueIcon } from "react-icons/fa";
+import {motion, useScroll, useTransform} from "framer-motion";
 
 
 type Technology = 'git' | 'typescript' | 'react' | 'next' | 'vue';
@@ -27,11 +30,25 @@ interface ProjectProps {
 }
 
 const Project: React.FC<ProjectProps> = (props) => {
+    const imgContainerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: imgContainerRef,
+        offset: ["start end", "end start"]
+    });
+    const translateY = useTransform(scrollYProgress, p => -p * 0.3 * 100 + '%');
+
     return (
         <article className="p-[1.5px] rounded-xl border-gradient cursor-pointer select-none">
-            <div className="p-4 rounded-xl bg-white/10 border border-white/10">
-                <div className="w-full h-[300px] mb-4 rounded-xl bg-white-500">
 
+            <div className="p-4 rounded-xl bg-white/10 border border-white/10">
+                <div ref={imgContainerRef} className="w-full h-[300px] mb-4 rounded-xl overflow-hidden">
+                    <motion.figure style={{ translateY, height: '50vh' }}>
+                        <motion.img
+                            src="/app/projects/complexify.webp"
+                            alt="Complexify"
+                            className="h-full object-cover"
+                        />
+                    </motion.figure>
                 </div>
                 <h3 className="text-2xl font-bold">
                     {props.title}

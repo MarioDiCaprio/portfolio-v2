@@ -16,21 +16,21 @@ interface TechnologyProps {
 
 const Technology: React.FC<TechnologyProps> = (props) => {
     return (
-        <div className={`py-5 flex items-center gap-5 text-5xl text-white font-bold duration-300 ${props.className}`}>
+        <article className={`py-5 flex items-center gap-5 text-5xl text-white font-bold duration-300 ${props.className}`}>
             {props.icon}
             <span>
                 {props.title}
             </span>
-        </div>
+        </article>
     );
 }
 
 const TechStack: React.FC = () => {
     return (
         <section className="w-full max-w-5xl mx-auto mt-40 grid grid-cols-3 gap-16">
-            <div className="">
+            <header className="col-span-3 text-center text-xl font-bold text-gradient-white">
                 Some languages and technologies I use.
-            </div>
+            </header>
             <Technology title="Vue JS" icon={<VueIcon />} className="hover:text-[#3fb883]"/>
             <Technology title="React JS" icon={<ReactIcon />} className="hover:text-[#00d8fe]"/>
             <Technology title="Next JS" icon={<NextIcon />}/>
