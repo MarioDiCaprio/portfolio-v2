@@ -16,7 +16,8 @@ const LandingPage: React.FC = () => {
                 Software Developer
             </h2>
             <p className="w-full max-w-[400px] text-center">
-                I am a Software Engineer specializing in frontend development. Based in Ulm, Germany.
+                I am a Software Engineer specialized in crafting accessible websites.
+                Based in Ulm, Germany.
             </p>
             <div aria-hidden className="w-full h-full mt-20 flex justify-center items-center text-4xl">
                 <ArrowDownIcon className="animate-bounce" />

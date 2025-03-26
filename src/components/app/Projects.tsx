@@ -1,6 +1,7 @@
 "use client"
 
-import React, {useRef, useState} from "react";
+import React, {useRef} from "react";
+import Link from "next/link";
 import { FaGitAlt as GitIcon } from "react-icons/fa6";
 import { BiLogoTypescript as TypeScriptIcon } from "react-icons/bi";
 import { FaReact as ReactIcon } from "react-icons/fa";
@@ -27,6 +28,7 @@ interface ProjectProps {
         preview: string;
     };
     technologies?: Technology[];
+    link: string;
 }
 
 const Project: React.FC<ProjectProps> = (props) => {
@@ -38,9 +40,10 @@ const Project: React.FC<ProjectProps> = (props) => {
     const translateY = useTransform(scrollYProgress, p => -p * 0.3 * 100 + '%');
 
     return (
-        <article className="p-[1.5px] rounded-xl border-gradient cursor-pointer select-none">
-
+        <article className="relative p-[1.5px] rounded-xl border-gradient cursor-pointer select-none">
+            {/* container */}
             <div className="p-4 rounded-xl bg-white/10 border border-white/10">
+                {/* image */}
                 <div ref={imgContainerRef} className="w-full h-[300px] mb-4 rounded-xl overflow-hidden">
                     <motion.figure style={{ translateY, height: '50vh' }}>
                         <motion.img
@@ -50,20 +53,31 @@ const Project: React.FC<ProjectProps> = (props) => {
                         />
                     </motion.figure>
                 </div>
-                <h3 className="text-2xl font-bold">
-                    {props.title}
-                </h3>
+                {/* title */}
+                <header className="text-2xl font-bold">
+                    {/* link to project */}
+                    <Link href={props.link} target="_blank">
+                        {/* span that covers whole container */}
+                        <span className="absolute top-0 left-0 w-full h-full rounded-[inherit]"/>
+                        {/* actual title */}
+                        <span>{props.title}</span>
+                    </Link>
+                </header>
+                {/* subtitle */}
                 <h4 className="text-lg font-bold text-white-300">
                     {props.subtitle}
                 </h4>
+                {/* divider */}
                 <hr className="my-5 opacity-10"/>
-                <div className="flex gap-3 text-xl">
+                {/* footer */}
+                <footer className="flex items-center gap-3 text-xl">
+                    {/* technologies */}
                     {props.technologies?.map(t =>
-                            <span key={t}>
-                       {technologyIcons[t]}
-                    </span>
+                        <span key={t}>
+                            {technologyIcons[t]}
+                        </span>
                     )}
-                </div>
+                </footer>
             </div>
         </article>
     );
@@ -81,25 +95,32 @@ const Projects: React.FC = () => (
             bg-gradient-to-b from-[#184BFF] to-[#174aff] rounded-[30%]
             blur-[150px] opacity-80 -z-1
         "/>
+        <header className="col-span-2 text-center text-xl font-bold text-gradient-white">
+            Some of my projects.
+        </header>
         <Project
             title="Complexify"
             subtitle="Private Project"
             technologies={['react', 'next', 'git']}
+            link="/projects/complexify"
         />
         <Project
             title="Complexify"
             subtitle="Private Project"
             technologies={['react', 'next', 'git']}
+            link="/projects/complexify"
         />
         <Project
             title="Complexify"
             subtitle="Private Project"
             technologies={['react', 'next', 'git']}
+            link="/projects/complexify"
         />
         <Project
             title="Complexify"
             subtitle="Private Project"
             technologies={['react', 'next', 'git']}
+            link="/projects/complexify"
         />
     </section>
 );
