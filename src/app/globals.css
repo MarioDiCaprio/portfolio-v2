@@ -26,6 +26,19 @@
     --color-white-900: #3d3d3d;
     --color-white-950: #292929;
     --color-white: var(--color-white-50);
+
+    --color-woodsmoke-50: #f6f6f6;
+    --color-woodsmoke-100: #e7e7e7;
+    --color-woodsmoke-200: #d1d1d1;
+    --color-woodsmoke-300: #b0b0b0;
+    --color-woodsmoke-400: #888888;
+    --color-woodsmoke-500: #6d6d6d;
+    --color-woodsmoke-600: #5d5d5d;
+    --color-woodsmoke-700: #4f4f4f;
+    --color-woodsmoke-800: #454545;
+    --color-woodsmoke-900: #3d3d3d;
+    --color-woodsmoke-950: #141414;
+    --color-woodsmoke: var(--color-woodsmoke-950);
 }
 
 @layer components {

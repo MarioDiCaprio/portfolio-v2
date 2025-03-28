@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer: React.FC = () => (
     <footer className="w-full min-h-16 py-6 px-8 flex justify-around items-center border-t border-black-900">
@@ -11,9 +12,9 @@ const Footer: React.FC = () => (
             </a>
         </article>
         <article className="flex flex-col">
-            <span>
+            <Link href="/impressum">
                 Impressum
-            </span>
+            </Link>
         </article>
     </footer>
 );
