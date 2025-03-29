@@ -24,6 +24,7 @@ const technologyIcons: Record<Technology, React.JSX.Element> = {
 interface ProjectProps {
     title: string;
     subtitle: string;
+    description: string;
     images?: {
         cover: string;
         preview: string;
@@ -46,6 +47,7 @@ const Project: React.FC<ProjectProps> = (props) => {
             initial="normal"
             whileHover="hovered"
             className="relative h-[480px] p-[1.5px] overflow-hidden rounded-xl border-gradient cursor-pointer select-none">
+
             {/* container */}
             <motion.div
                 variants={{
@@ -53,6 +55,7 @@ const Project: React.FC<ProjectProps> = (props) => {
                     hovered: { padding: '10px' },
                 }}
                 className="h-full overflow-hidden rounded-xl bg-woodsmoke-900/50 border border-white/10">
+
                 {/* image */}
                 <motion.div
                     ref={imgContainerRef}
@@ -71,9 +74,18 @@ const Project: React.FC<ProjectProps> = (props) => {
                         />
                     </motion.figure>
                 </motion.div>
-                {/* title */}
-                <motion.div className="h-[40%]">
-                    <header className="text-2xl font-bold">
+
+                {/* project body */}
+                <motion.div
+                    variants={{
+                        normal: { opacity: 0 },
+                        hovered: { opacity: 1 }
+                    }}
+                    transition={{ ease: "easeInOut", duration: 0.6 }}
+                    className="h-[40%]">
+
+                    {/* title */}
+                    <h1 className="text-2xl font-bold">
                         {/* link to project */}
                         <Link href={props.link} target="_blank">
                             {/* span that covers whole container */}
@@ -81,13 +93,21 @@ const Project: React.FC<ProjectProps> = (props) => {
                             {/* actual title */}
                             <span>{props.title}</span>
                         </Link>
-                    </header>
+                    </h1>
+
                     {/* subtitle */}
-                    <h4 className="text-lg font-bold text-white-300">
+                    <h2 className="text-lg font-bold text-white-300">
                         {props.subtitle}
-                    </h4>
+                    </h2>
+
+                    {/* description */}
+                    <p className="mt-2">
+                        {props.description}
+                    </p>
+
                     {/* divider */}
                     <hr className="my-5 opacity-10"/>
+
                     {/* footer */}
                     <footer className="flex items-center gap-3 text-xl">
                         {/* technologies */}
@@ -98,6 +118,7 @@ const Project: React.FC<ProjectProps> = (props) => {
                         )}
                     </footer>
                 </motion.div>
+
             </motion.div>
         </motion.article>
     );
@@ -111,24 +132,28 @@ const Projects: React.FC = () => (
         <Project
             title="Complexify"
             subtitle="Private Project"
+            description="Visualization techniques for complex-valued functions."
             technologies={['react', 'next', 'git']}
             link="/projects/complexify"
         />
         <Project
             title="Complexify"
             subtitle="Private Project"
+            description="Visualization techniques for complex-valued functions."
             technologies={['react', 'next', 'git']}
             link="/projects/complexify"
         />
         <Project
             title="Complexify"
             subtitle="Private Project"
+            description="Visualization techniques for complex-valued functions."
             technologies={['react', 'next', 'git']}
             link="/projects/complexify"
         />
         <Project
             title="Complexify"
             subtitle="Private Project"
+            description="Visualization techniques for complex-valued functions."
             technologies={['react', 'next', 'git']}
             link="/projects/complexify"
         />
