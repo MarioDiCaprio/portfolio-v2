@@ -18,7 +18,7 @@ const Page: React.FC = () => (
                 <h3 className="font-bold text-xl mb-3">
                     Haftung für Inhalte
                 </h3>
-                <p>
+                <p className="text-justify">
                     Die Inhalte meiner Webseite wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit,
                     Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen.
                     Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
@@ -35,7 +35,7 @@ const Page: React.FC = () => (
                 <h3 className="font-bold text-xl mb-3">
                     Haftungsbeschränkung für externe Links
                 </h3>
-                <p>
+                <p className="text-justify">
                     Diese Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss
                     habe. Daher kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
                     verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die
@@ -50,7 +50,7 @@ const Page: React.FC = () => (
                 <h3 className="font-bold text-xl mb-3">
                     Urheberrecht
                 </h3>
-                <p>
+                <p className="text-justify">
                     Die von mir erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Deutschen Urheberrecht.
                     Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen
                     des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
