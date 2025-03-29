@@ -56,6 +56,18 @@
             color: var(--color-black);
         }
     }
+
+    .link {
+        color: var(--color-white-200);
+        transition: 300ms;
+        &:hover {
+            color: var(--color-white);
+        }
+    }
+
+    .title {
+        @apply text-4xl font-light uppercase tracking-wider
+    }
 }
 
 .text-gradient-white {
@@ -63,14 +75,6 @@
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-}
-
-.link {
-    color: var(--color-white-200);
-    transition: 300ms;
-    &:hover {
-        color: var(--color-white);
-    }
 }
 
 .border-gradient {
