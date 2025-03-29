@@ -105,7 +105,7 @@ const Project: React.FC<ProjectProps> = (props) => {
 
 const Projects: React.FC = () => (
     <section className="relative w-full max-w-5xl mx-auto mt-40 grid grid-cols-2 gap-12">
-        <h1 className="col-span-2 text-center text-4xl font-light uppercase tracking-wider">
+        <h1 className="col-span-2 text-center title">
             Project Gallery
         </h1>
         <Project
@@ -132,8 +132,8 @@ const Projects: React.FC = () => (
             technologies={['react', 'next', 'git']}
             link="/projects/complexify"
         />
-        <footer className="col-span-2 text-center text-xl">
-            <Link href="/projects" className="flex justify-center items-center gap-3">
+        <footer className="col-span-2 text-center text-xl text-white-200 hover:text-white duration-300">
+            <Link href="/projects" target="_blank" className="flex justify-center items-center gap-3">
                 <span aria-hidden>
                     <GalleryIcon />
                 </span>
