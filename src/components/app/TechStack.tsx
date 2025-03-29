@@ -30,9 +30,9 @@ const Technology: React.FC<TechnologyProps> = (props) => {
 const TechStack: React.FC = () => {
     return (
         <section className="w-full max-w-5xl mx-auto mt-40 grid grid-cols-3 gap-16">
-            <header className="col-span-3 text-center text-xl font-bold text-gradient-white">
-                Some languages and technologies I use.
-            </header>
+            <h1 className="col-span-3 text-center title">
+                Technologies
+            </h1>
             <Technology title="Vue JS" icon={<VueIcon />} className="hover:text-[#3fb883]"/>
             <Technology title="React JS" icon={<ReactIcon />} className="hover:text-[#00d8fe]"/>
             <Technology title="Next JS" icon={<NextIcon />}/>
