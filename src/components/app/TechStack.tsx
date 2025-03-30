@@ -15,30 +15,33 @@ interface TechnologyProps {
 
 const Technology: React.FC<TechnologyProps> = (props) => {
     return (
-        <article className="py-5 flex items-center gap-5 text-5xl text-white font-bold">
+        <li className="py-5 flex items-center gap-5 text-5xl text-white font-bold">
             <span aria-hidden>
                 {props.icon}
             </span>
             <span>
                 {props.title}
             </span>
-        </article>
+        </li>
     );
 }
 
 const TechStack: React.FC = () => {
     return (
-        <section className="w-full max-w-5xl mx-auto mt-40 grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
-            <h1 className="lg:col-span-3 text-center title">
+        <section className="w-full max-w-5xl mx-auto mt-40">
+            <h1 className="text-center title mb-12">
                 Technologies
             </h1>
-            <Technology title="Vue JS" icon={<VueIcon />} />
-            <Technology title="React JS" icon={<ReactIcon />} />
-            <Technology title="Next JS" icon={<NextIcon />}/>
-            <Technology title="Tailwind" icon={<TailwindIcon />} />
-            <Technology title="Storybook" icon={<StorybookIcon />} />
-            <Technology title="Spring" icon={<SpringIcon />} />
-            <Technology title="Blazor" icon={<BlazorIcon />} />
+            <ul className="w-full list-none grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
+                <Technology title="Vue JS" icon={<VueIcon />} />
+                <Technology title="React JS" icon={<ReactIcon />} />
+                <Technology title="Next JS" icon={<NextIcon />}/>
+                <Technology title="Tailwind" icon={<TailwindIcon />} />
+                <Technology title="Storybook" icon={<StorybookIcon />} />
+                <Technology title="Spring" icon={<SpringIcon />} />
+                <Technology title="Blazor" icon={<BlazorIcon />} />
+            </ul>
+
         </section>
     );
 };
