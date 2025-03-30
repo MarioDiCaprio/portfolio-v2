@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useRef, useState} from "react";
+import React, {useRef} from "react";
 import Link from "next/link";
 import {motion, useScroll, useTransform} from "framer-motion";
 import { FaGitAlt as GitIcon } from "react-icons/fa6";
@@ -35,7 +35,6 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = (props) => {
     const imgContainerRef = useRef(null);
-    const variant = useState<'normal' | 'hovered'>('normal');
     const { scrollYProgress } = useScroll({
         target: imgContainerRef,
         offset: ["start end", "end start"]
@@ -43,29 +42,13 @@ const Project: React.FC<ProjectProps> = (props) => {
     const translateY = useTransform(scrollYProgress, p => -p * 0.2 * 100 + '%');
 
     return (
-        <motion.article
-            initial="normal"
-            whileHover="hovered"
-            className="relative h-[480px] p-[1.5px] overflow-hidden rounded-xl border-gradient cursor-pointer select-none">
+        <article className="group relative h-[480px] p-[1.5px] overflow-hidden rounded-xl border-gradient cursor-pointer select-none">
 
             {/* container */}
-            <motion.div
-                variants={{
-                    normal: { padding: 0 },
-                    hovered: { padding: '10px' },
-                }}
-                className="h-full overflow-hidden rounded-xl bg-woodsmoke-900/50 border border-white/10">
+            <div className="h-full group-hover:p-5 overflow-hidden rounded-xl bg-woodsmoke-900/50 border border-white/10 duration-300">
 
                 {/* image */}
-                <motion.div
-                    ref={imgContainerRef}
-                    layout
-                    variants={{
-                        normal: { height: '100%' },
-                        hovered: { height: '60%' },
-                    }}
-                    transition={{ ease: "easeOut", duration: 0.3 }}
-                    className="w-full mb-4 rounded-xl overflow-hidden">
+                <div ref={imgContainerRef} className="w-full h-full group-hover:h-[60%] mb-4 rounded-xl overflow-hidden duration-300">
                     <motion.figure className="h-full" style={{ translateY, height: '130%' }}>
                         <motion.img
                             src="/app/projects/complexify.webp"
@@ -73,16 +56,10 @@ const Project: React.FC<ProjectProps> = (props) => {
                             className="h-full object-cover"
                         />
                     </motion.figure>
-                </motion.div>
+                </div>
 
                 {/* project body */}
-                <motion.div
-                    variants={{
-                        normal: { opacity: 0 },
-                        hovered: { opacity: 1 }
-                    }}
-                    transition={{ ease: "easeInOut", duration: 0.6 }}
-                    className="h-[40%]">
+                <motion.div className="h-[40%] opacity-0 group-hover:opacity-100 duration-600">
 
                     {/* title */}
                     <h1 className="text-2xl font-bold">
@@ -119,8 +96,8 @@ const Project: React.FC<ProjectProps> = (props) => {
                     </footer>
                 </motion.div>
 
-            </motion.div>
-        </motion.article>
+            </div>
+        </article>
     );
 }
 
