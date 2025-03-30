@@ -45,10 +45,14 @@ const Project: React.FC<ProjectProps> = (props) => {
         <article className="group relative h-[480px] p-[1.5px] overflow-hidden rounded-xl border-gradient cursor-pointer select-none">
 
             {/* container */}
-            <div className="h-full group-hover:p-5 overflow-hidden rounded-xl bg-woodsmoke-900/50 border border-white/10 duration-300">
+            <div className="
+                h-full p-5 overflow-hidden rounded-xl bg-woodsmoke-900/50 border border-white/10 duration-300
+                [@media(pointer:fine)]:p-0 [@media(pointer:fine)]:group-hover:p-5">
 
                 {/* image */}
-                <div ref={imgContainerRef} className="w-full h-full group-hover:h-[60%] mb-4 rounded-xl overflow-hidden duration-300">
+                <div ref={imgContainerRef} className="
+                    w-full h-[60%] mb-4 rounded-xl overflow-hidden duration-300
+                    [@media(pointer:fine)]:h-full [@media(pointer:fine)]:group-hover:h-[60%]">
                     <motion.figure className="h-full" style={{ translateY, height: '130%' }}>
                         <motion.img
                             src="/app/projects/complexify.webp"
@@ -59,7 +63,9 @@ const Project: React.FC<ProjectProps> = (props) => {
                 </div>
 
                 {/* project body */}
-                <motion.div className="h-[40%] opacity-0 group-hover:opacity-100 duration-600">
+                <motion.div className="
+                    h-[40%] opacity-100 duration-600
+                    [@media(pointer:fine)]:opacity-0 [@media(pointer:fine)]:group-hover:opacity-100">
 
                     {/* title */}
                     <h1 className="text-2xl font-bold">
@@ -83,7 +89,7 @@ const Project: React.FC<ProjectProps> = (props) => {
                     </p>
 
                     {/* divider */}
-                    <hr className="my-5 opacity-10"/>
+                    <hr className="my-3 lg:my-5 opacity-10"/>
 
                     {/* footer */}
                     <footer className="flex items-center gap-3 text-xl">
@@ -102,8 +108,8 @@ const Project: React.FC<ProjectProps> = (props) => {
 }
 
 const Projects: React.FC = () => (
-    <section className="relative w-full max-w-5xl mx-auto mt-40 grid grid-cols-2 gap-12">
-        <h1 className="col-span-2 text-center title">
+    <section className="relative w-full max-w-5xl mx-auto mt-40 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <h1 className="lg:col-span-2 text-center title">
             Project Gallery
         </h1>
         <Project
@@ -134,7 +140,7 @@ const Projects: React.FC = () => (
             technologies={['react', 'next', 'git']}
             link="/projects/complexify"
         />
-        <footer className="col-span-2 text-center text-xl text-white-200 hover:text-white duration-300">
+        <footer className="lg:col-span-2 text-center text-xl text-white-200 hover:text-white duration-300">
             <Link href="/projects" target="_blank" className="flex justify-center items-center gap-3">
                 <span aria-hidden>
                     <GalleryIcon />

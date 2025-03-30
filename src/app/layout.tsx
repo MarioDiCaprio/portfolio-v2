@@ -1,7 +1,8 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/components/app/Navbar";
+import Footer from "@/components/app/Footer";
 
 
 const inter = Inter({
@@ -18,9 +19,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <html lang="en">
             <body className={`${inter.className} antialiased bg-woodsmoke text-white`}>
                 <Navbar />
-                <main>
+                <main className="p-3">
                     {children}
                 </main>
+                <Footer />
             </body>
         </html>
     );

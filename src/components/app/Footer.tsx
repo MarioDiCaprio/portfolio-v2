@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const Footer: React.FC = () => (
-    <footer className="w-full min-h-16 py-6 px-8 flex justify-around items-center border-t border-black-900">
+    <footer className="w-full min-h-16 mt-15 py-6 px-8 flex flex-col lg:flex-row justify-around items-start lg:items-center gap-5 border-t border-black-900">
         <article className="flex flex-col">
             <span className="font-bold">
                 mariodicaprio.com
@@ -11,8 +11,8 @@ const Footer: React.FC = () => (
                 dicaprio.mario@protonmail.com
             </a>
         </article>
-        <article className="flex flex-col">
-            <Link href="/impressum">
+        <article className="flex flex-col justify-start">
+            <Link href="/impressum" className="link">
                 Impressum
             </Link>
         </article>

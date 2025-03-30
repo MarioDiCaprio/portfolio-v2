@@ -6,7 +6,7 @@ import {IoDocument as ResumeIcon} from "react-icons/io5";
 
 
 const Navbar: React.FC = () => (
-    <nav aria-label="main navigation" className="w-full h-16 flex justify-between items-center py-4 px-8 border-b border-black-900">
+    <nav aria-label="main navigation" className="w-full h-16 hidden lg:flex justify-between items-center py-4 px-8 border-b border-black-900">
 
         <div role="navigation" aria-label="email">
             <a href="mailto:dicaprio.mario@protonmail.com" className="link">

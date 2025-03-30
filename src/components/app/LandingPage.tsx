@@ -5,13 +5,11 @@ import { FaArrowDown as ArrowDownIcon } from "react-icons/fa";
 const LandingPage: React.FC = () => {
     return (
         <section className="relative w-full pt-40 flex flex-col items-center">
-            <h1 className="
-                    mb-4 text-6xl font-bold text-transparent bg-clip-text
-                    bg-gradient-to-b from-white to-white-300">
+            <h1 className="mb-4 text-center text-6xl font-bold">
                 Mario Di Caprio
             </h1>
             <h2 className="
-                    mb-7 text-6xl font-bold text-transparent bg-clip-text
+                    mb-7 text-center text-6xl font-bold text-transparent bg-clip-text
                     bg-gradient-to-r from-[#ff9500] to-[#66E3FF]">
                 Software Developer
             </h2>
