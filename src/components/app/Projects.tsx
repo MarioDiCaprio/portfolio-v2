@@ -46,7 +46,7 @@ const Project: React.FC<ProjectProps> = (props) => {
 
             {/* container */}
             <div className="
-                h-full p-5 overflow-hidden rounded-xl bg-woodsmoke-900/50 border border-white/10 duration-300
+                h-full p-5 overflow-hidden rounded-xl bg-woodsmoke-900 border border-black-900 duration-300
                 [@media(pointer:fine)]:p-0 [@media(pointer:fine)]:group-hover:p-5">
 
                 {/* image */}
@@ -89,7 +89,7 @@ const Project: React.FC<ProjectProps> = (props) => {
                     </p>
 
                     {/* divider */}
-                    <hr className="my-3 lg:my-5 opacity-10"/>
+                    <hr className="my-3 lg:my-5 border-black-900"/>
 
                     {/* footer */}
                     <footer className="flex items-center gap-3 text-xl">
