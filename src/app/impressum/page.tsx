@@ -2,14 +2,40 @@ import React from "react";
 
 const Page: React.FC = () => (
     <div lang="de" className="w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <h1 className="font-bold text-3xl">
+
+        <h1 className="title text-left mt-12">
             Impressum
         </h1>
+
         <article className="mt-5">
-            <h2 className="font-bold text-2xl">
+            <h2 className="font-bold text-2xl mb-5">
                 Angaben gemäß § 5 TMG:
             </h2>
+            <table className="
+                w-full text-left
+                table-auto border-separate border-spacing-5 rounded-xl
+                bg-woodsmoke-900 border border-black-900">
+                <tbody>
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td>Mario Di Caprio</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Anschrift</th>
+                        <td>Schülinstraße 13/1, 89073 Ulm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Mobil</th>
+                        <td>+49 176 31711648</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>dicaprio.mario@protonmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
+
         <article className="flex flex-col gap-5">
             <h2 className="font-bold text-2xl">
                 Haftungsausschluss
@@ -62,6 +88,7 @@ const Page: React.FC = () => (
                 </p>
             </section>
         </article>
+
     </div>
 );
 
