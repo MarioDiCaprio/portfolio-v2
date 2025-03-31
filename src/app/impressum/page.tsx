@@ -12,7 +12,7 @@ const Page: React.FC = () => (
                 Angaben gemäß § 5 TMG:
             </h2>
             <table className="
-                w-full text-left
+                block w-full overflow-auto text-left
                 table-auto border-separate border-spacing-5 rounded-xl
                 bg-woodsmoke-900 border border-black-900">
                 <tbody>
