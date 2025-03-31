@@ -10,31 +10,6 @@ import { IoClose as CloseIcon } from "react-icons/io5";
 import {AnimatePresence, motion} from "framer-motion";
 
 
-const siteLinks: React.JSX.Element[] = [
-    <Link href="/" key="home" className="link">
-        Home
-    </Link>,
-    <Link href="/projects" key="projects" className="link">
-        Projects
-    </Link>
-];
-
-const externalLinks: React.JSX.Element[] = [
-    <a key="linkedin" href="https://www.linkedin.com/in/mario-di-caprio-a0897b243/" target="_blank" className="flex gap-2 items-center link">
-        <LinkedInIcon aria-hidden/>
-        <span>LinkedIn</span>
-    </a>,
-    <a key="github" href="https://github.com/MarioDiCaprio/" target="_blank" className="flex gap-2 items-center link">
-        <GitHubIcon aria-hidden/>
-        <span>GitHub</span>
-    </a>,
-    <a key="resume" href="https://.../" target="_blank" className="flex gap-2 items-center link">
-        <ResumeIcon aria-hidden/>
-        <span>Resumé</span>
-    </a>
-]
-
-
 const Navbar: React.FC = () => {
     const [open, setOpen] = React.useState(false);
 
@@ -48,6 +23,30 @@ const Navbar: React.FC = () => {
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         document.getElementById("openMenuButton")!.focus();
     }
+
+    const siteLinks: React.JSX.Element[] = [
+        <Link href="/" key="home" className="link" onClick={closeMenu}>
+            Home
+        </Link>,
+        <Link href="/projects" key="projects" className="link" onClick={closeMenu}>
+            Projects
+        </Link>
+    ];
+
+    const externalLinks: React.JSX.Element[] = [
+        <a key="linkedin" href="https://www.linkedin.com/in/mario-di-caprio-a0897b243/" target="_blank" className="flex gap-2 items-center link">
+            <LinkedInIcon aria-hidden/>
+            <span>LinkedIn</span>
+        </a>,
+        <a key="github" href="https://github.com/MarioDiCaprio/" target="_blank" className="flex gap-2 items-center link">
+            <GitHubIcon aria-hidden/>
+            <span>GitHub</span>
+        </a>,
+        <a key="resume" href="https://.../" target="_blank" className="flex gap-2 items-center link">
+            <ResumeIcon aria-hidden/>
+            <span>Resumé</span>
+        </a>
+    ];
 
     return (
         <nav aria-label="main navigation" className="w-full h-16 flex justify-between items-center py-4 px-8 border-b border-black-900">
