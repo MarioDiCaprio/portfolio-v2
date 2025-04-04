@@ -8,27 +8,32 @@ import { BiLogoTypescript as TypeScriptIcon } from "react-icons/bi";
 import { FaReact as ReactIcon } from "react-icons/fa";
 import { SiNextdotjs as NextIcon } from "react-icons/si";
 import { FaVuejs as VueIcon } from "react-icons/fa";
+import { SiTailwindcss as TailwindIcon } from "react-icons/si";
+import { SiBlazor as BlazorIcon } from "react-icons/si";
+import { SiDocker as DockerIcon } from "react-icons/si";
+import { SiSupabase as SupabaseIcon } from "react-icons/si";
 import { LuGalleryVerticalEnd as GalleryIcon } from "react-icons/lu";
 
 
-type Technology = 'git' | 'typescript' | 'react' | 'next' | 'vue';
+type Technology = 'git' | 'typescript' | 'react' | 'next' | 'vue' | 'tailwind' | 'blazor' | 'docker' | 'supabase';
 
 const technologyIcons: Record<Technology, React.JSX.Element> = {
     'git': <GitIcon aria-label="Git" />,
     'typescript': <TypeScriptIcon aria-label="TypeScript" />,
     'react': <ReactIcon aria-label="React JS" />,
     'next': <NextIcon aria-label="Next JS" />,
-    'vue': <VueIcon aria-label="Vue JS" />
+    'vue': <VueIcon aria-label="Vue JS" />,
+    'tailwind': <TailwindIcon aria-label="Tailwind" />,
+    'blazor': <BlazorIcon aria-label="Blazor"/>,
+    'docker': <DockerIcon aria-label="Docker" />,
+    'supabase': <SupabaseIcon aria-label="Supabase" />,
 };
 
 interface ProjectProps {
     title: string;
     subtitle: string;
     description: string;
-    images?: {
-        cover: string;
-        preview: string;
-    };
+    image: string;
     technologies?: Technology[];
     link: string;
 }
@@ -55,7 +60,7 @@ const Project: React.FC<ProjectProps> = (props) => {
                     [@media(pointer:fine)]:h-full [@media(pointer:fine)]:group-hover:h-[60%]">
                     <motion.figure className="h-full" style={{ translateY, height: '130%' }}>
                         <motion.img
-                            src="/app/projects/complexify.webp"
+                            src={props.image}
                             alt="Complexify"
                             className="h-full object-cover"
                         />
@@ -84,21 +89,23 @@ const Project: React.FC<ProjectProps> = (props) => {
                     </h2>
 
                     {/* description */}
-                    <p className="mt-2">
+                    <p aria-label="description" className="mt-2">
                         {props.description}
                     </p>
 
                     {/* divider */}
-                    <hr className="my-3 lg:my-5 border-black-900"/>
+                    <hr aria-hidden className="my-3 lg:my-5 border-black-900"/>
 
                     {/* footer */}
-                    <footer className="flex items-center gap-3 text-xl">
+                    <footer aria-label="technologies">
                         {/* technologies */}
-                        {props.technologies?.map(t =>
-                            <span key={t}>
-                                {technologyIcons[t]}
-                            </span>
-                        )}
+                        <ul className="list-none text-xl flex items-center gap-3">
+                            {props.technologies?.map(t =>
+                                <li key={t}>
+                                    {technologyIcons[t]}
+                                </li>
+                            )}
+                        </ul>
                     </footer>
                 </motion.div>
 
@@ -115,30 +122,18 @@ const Projects: React.FC = () => (
         <Project
             title="Complexify"
             subtitle="Private Project"
+            image="/app/projects/complexify.webp"
             description="Visualization techniques for complex-valued functions."
-            technologies={['react', 'next', 'git']}
+            technologies={['react', 'next', 'tailwind', 'git']}
             link="/projects/complexify"
         />
         <Project
-            title="Complexify"
-            subtitle="Private Project"
-            description="Visualization techniques for complex-valued functions."
-            technologies={['react', 'next', 'git']}
-            link="/projects/complexify"
-        />
-        <Project
-            title="Complexify"
-            subtitle="Private Project"
-            description="Visualization techniques for complex-valued functions."
-            technologies={['react', 'next', 'git']}
-            link="/projects/complexify"
-        />
-        <Project
-            title="Complexify"
-            subtitle="Private Project"
-            description="Visualization techniques for complex-valued functions."
-            technologies={['react', 'next', 'git']}
-            link="/projects/complexify"
+            title="Spaces"
+            subtitle="University Project"
+            image="/app/projects/spaces.webp"
+            description="Social media application."
+            technologies={['blazor', 'tailwind', 'docker', 'supabase', 'git']}
+            link="/projects/spaces"
         />
         <footer className="lg:col-span-2 text-center text-xl text-white-200 hover:text-white duration-300">
             <Link href="/projects" target="_blank" className="flex justify-center items-center gap-3">
