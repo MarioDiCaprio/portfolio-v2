@@ -8,6 +8,7 @@ import {IoDocument as ResumeIcon} from "react-icons/io5";
 import { IoMenu as MenuIcon } from "react-icons/io5";
 import { IoClose as CloseIcon } from "react-icons/io5";
 import {AnimatePresence, motion} from "framer-motion";
+import {email} from "@/globals";
 
 
 const Navbar: React.FC = () => {
@@ -52,8 +53,8 @@ const Navbar: React.FC = () => {
         <nav aria-label="main navigation" className="w-full h-16 flex justify-between items-center py-4 px-8 border-b border-black-900">
 
             <div role="navigation" aria-label="email">
-                <a href="mailto:dicaprio.mario@protonmail.com" className="link">
-                    dicaprio.mario@protonmail.com
+                <a href={`mailto:${email}`} className="link">
+                    {email}
                 </a>
             </div>
 
