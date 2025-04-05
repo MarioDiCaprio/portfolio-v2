@@ -42,21 +42,6 @@
 }
 
 @layer components {
-    .btn {
-        padding: calc(var(--spacing) * 3) calc(var(--spacing) * 8);
-        color: var(--color-white);
-        background: transparent;
-        border-radius: calc(infinity * 1px);
-        border: 1px solid var(--color-white);
-        cursor: pointer;
-        transition: 300ms;
-        &:hover {
-            border-color: transparent;
-            background: var(--color-white);
-            color: var(--color-black);
-        }
-    }
-
     .link {
         color: var(--color-white-200);
         transition: 300ms;
@@ -64,18 +49,15 @@
             color: var(--color-white);
         }
     }
-
     .title {
         @apply text-4xl text-center font-light uppercase tracking-wider
     }
 }
 
-.text-gradient-white {
-    background: linear-gradient(to bottom, var(--color-white), var(--color-white-300));
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-}
+/*
+Rotating gradient effect when hovering
+(used for the project components)
+*/
 
 .border-gradient {
     position: relative;
