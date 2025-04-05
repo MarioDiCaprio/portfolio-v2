@@ -38,7 +38,7 @@ interface ProjectProps {
     link: string;
 }
 
-const Project: React.FC<ProjectProps> = (props) => {
+export const Project: React.FC<ProjectProps> = (props) => {
     const imgContainerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: imgContainerRef,
@@ -69,7 +69,7 @@ const Project: React.FC<ProjectProps> = (props) => {
 
                 {/* project body */}
                 <motion.div className="
-                    h-[40%] opacity-100 duration-600
+                    h-[40%] flex flex-col justify-start opacity-100 duration-600
                     [@media(pointer:fine)]:opacity-0 [@media(pointer:fine)]:group-hover:opacity-100">
 
                     {/* title */}
@@ -89,15 +89,15 @@ const Project: React.FC<ProjectProps> = (props) => {
                     </h2>
 
                     {/* description */}
-                    <p aria-label="description" className="mt-2">
+                    <p aria-label="description" className="mt-2 mb-auto">
                         {props.description}
                     </p>
 
                     {/* divider */}
-                    <hr aria-hidden className="my-3 lg:my-5 border-black-900"/>
+                    <hr aria-hidden className="border-black-900"/>
 
                     {/* footer */}
-                    <footer aria-label="technologies">
+                    <footer aria-label="technologies" className="py-3">
                         {/* technologies */}
                         <ul className="list-none text-xl flex items-center gap-3">
                             {props.technologies?.map(t =>
@@ -115,28 +115,34 @@ const Project: React.FC<ProjectProps> = (props) => {
 }
 
 const Projects: React.FC = () => (
-    <section className="relative w-full max-w-5xl mx-auto mt-40 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <h1 className="lg:col-span-2 text-center title">
+    <section className="relative w-full max-w-5xl mx-auto mt-40">
+        <h1 className="text-center title">
             Project Gallery
         </h1>
-        <Project
-            title="Complexify"
-            subtitle="Private Project"
-            image="/app/projects/complexify.webp"
-            description="Visualization techniques for complex-valued functions."
-            technologies={['react', 'next', 'tailwind', 'git']}
-            link="/projects/complexify"
-        />
-        <Project
-            title="Spaces"
-            subtitle="University Project"
-            image="/app/projects/spaces.webp"
-            description="Social media application."
-            technologies={['blazor', 'tailwind', 'docker', 'supabase', 'git']}
-            link="/projects/spaces"
-        />
-        <footer className="lg:col-span-2 text-center text-xl text-white-200 hover:text-white duration-300">
-            <Link href="/projects" target="_blank" className="flex justify-center items-center gap-3">
+        <ul className="list-none w-full my-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
+            <li>
+                <Project
+                    title="Complexify"
+                    subtitle="Private Project"
+                    image="/app/projects/complexify.webp"
+                    description="Visualization techniques for complex-valued functions."
+                    technologies={['react', 'next', 'tailwind', 'git']}
+                    link="/projects/complexify"
+                />
+            </li>
+            <li>
+                <Project
+                    title="Spaces"
+                    subtitle="University Project"
+                    image="/app/projects/spaces.webp"
+                    description="Social media application."
+                    technologies={['blazor', 'tailwind', 'docker', 'supabase', 'git']}
+                    link="/projects/spaces"
+                />
+            </li>
+        </ul>
+        <footer className="text-center text-xl">
+            <Link href="/projects" target="_blank" className="link flex justify-center items-center gap-3">
                 <span aria-hidden>
                     <GalleryIcon />
                 </span>
