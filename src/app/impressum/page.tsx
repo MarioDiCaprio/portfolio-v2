@@ -30,7 +30,7 @@ const Page: React.FC = () => (
                     </tr>
                     <tr>
                         <th scope="row">Email</th>
-                        <td>dicaprio.mario@protonmail.com</td>
+                        <td>contact@mariodicaprio.com</td>
                     </tr>
                 </tbody>
             </table>
