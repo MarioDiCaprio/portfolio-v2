@@ -55,6 +55,27 @@
 }
 
 /*
+Gradient text
+*/
+
+.text-gradient {
+    color: transparent;
+    background: linear-gradient(to right, #FED877, #fe9077, #9456f4, #fe9077, #FED877);
+    background-clip: text;
+    background-size: 200%;
+    animation: 8s bg-shift-right linear infinite;
+}
+
+@keyframes bg-shift-right {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: 200%;
+    }
+}
+
+/*
 Rotating gradient effect when hovering
 (used for the project components)
 */

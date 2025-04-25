@@ -9,8 +9,7 @@ const LandingPage: React.FC = () => {
                 Mario Di Caprio
             </h1>
             <h2 className="
-                    mb-7 text-center text-6xl font-bold text-transparent bg-clip-text
-                    bg-gradient-to-r from-[#ff9500] to-[#66E3FF]">
+                    mb-7 text-center text-6xl font-bold text-gradient">
                 Software Developer
             </h2>
             <p className="w-full max-w-[400px] text-center">
