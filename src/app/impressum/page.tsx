@@ -1,4 +1,5 @@
 import React from "react";
+import {email} from "@/globals";
 
 const Page: React.FC = () => (
     <div lang="de" className="w-full max-w-5xl mx-auto flex flex-col gap-10">
@@ -30,7 +31,7 @@ const Page: React.FC = () => (
                     </tr>
                     <tr>
                         <th scope="row">Email</th>
-                        <td>contact@mariodicaprio.com</td>
+                        <td>{email}</td>
                     </tr>
                 </tbody>
             </table>
